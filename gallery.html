@@ -13,6 +13,16 @@
 <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text|Questrial" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Cinzel|Nunito+Sans" rel="stylesheet">
 <link rel="shortcut icon" href="images/favicon.png">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-53112709-9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-53112709-9');
+</script>
+
 	</head>
 
 	<body class="is-preload">
@@ -154,7 +164,7 @@
 
 						<section class="col-12 col-12-narrower">
 							<div style = "text-align:center;">
-							<a href = "https://ars.electronica.art/outofthebox/en/deep-angel/">Ars Electronica</a>  &nbsp;&nbsp;🔗&nbsp;&nbsp; <a href = "https://www.youtube.com/watch?v=9CahnQfkkZg">La Monde</a> &nbsp;&nbsp;🔗&nbsp;&nbsp;
+							<a href = "https://ars.electronica.art/outofthebox/en/deep-angel/">Ars Electronica</a>  &nbsp;&nbsp;🔗&nbsp;&nbsp; <a href = "https://www.youtube.com/watch?v=9CahnQfkkZg">Le Monde</a> &nbsp;&nbsp;🔗&nbsp;&nbsp;
 <a href = "https://www.nytimes.com/2018/10/22/business/efforts-to-acknowledge-the-risks-of-new-ai-technology.html">New York Times</a> &nbsp;&nbsp;🔗&nbsp;&nbsp; 
 <a href = "https://www.artsy.net/article/artsy-editorial-ai-will-forever-change-create-find-truth-images">Artsy</a> &nbsp;&nbsp;🔗&nbsp;&nbsp;
 <a href = "https://aeon.co/essays/imagine-if-we-didnt-fear-the-machines-of-our-own-making">Aeon</a> 
@@ -299,6 +309,33 @@
 					
 					</div>
 				</section>
+					<section class="wrapper style3">
+					<div class="container">
+						<header class="major">
+								<h2 style = "color:black; font-weight: bold">Hear about our next projects before they launch</h2>
+								<form id = "signup">
+									<div class="row gtr-10">
+										<div class="col-6 col-12-mobilep">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="col-6 col-12-mobilep">
+											<input type="email" name="email" id="email" placeholder="Email" />
+										</div>
+										<!-- <div class="col-12">
+											<textarea name="message" id="message" placeholder="Message" rows="5"></textarea>
+										</div> -->
+										<div class="col-5 col-12-mobilep">
+										</div>
+										<div class="col-6">
+											<ul class="actions">
+												<li><input type="submit" class="button alt" value="Sign Up" /></li>
+											</ul>
+										</div>
+									</div>
+								</form>
+								</header>
+							</div>
+							</section>
 
 
 	
@@ -337,6 +374,25 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/jquery.serialize-object.min.js"></script>
+
+					<script>
+	var $form = $('form#signup'),
+    url = 'https://script.google.com/macros/s/AKfycbwnvHVwikUds90iTi7r-GP2NUkrXU0wmHPKyc9RQ8Ey-UHm3PY0/exec'
+
+			$('#signup').on('click', function(e) {
+			  e.preventDefault();
+			  var jqxhr = $.ajax({
+			    url: url,
+			    method: "GET",
+			    dataType: "json",
+			    data: $form.serializeObject(),
+			    success: function(){
+			    	console.log("made it")
+			    }
+			  });
+			})
+		</script>
 
 	</body>
 </html>
