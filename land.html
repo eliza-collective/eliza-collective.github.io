@@ -46,13 +46,50 @@
 				<section class="wrapper style2">
 					<div class="container">
 						<header class="major">
-							<h2>ELIZA is a AI Art Collective that meditates on and reifies the social impact of artificial intelligence. </h2>
-							<p>We are a team of artists, machine learning researchers and philosophers who believe AI needs to be better understood and conceptualized in order to be best used by society. <br> <br>Inspired by the <a href ="https://en.m.wikipedia.org/wiki/ELIZA_effect" style = "color:red">ELIZA effect</a>, we use various mediums and methods to interrogate the agency we endow to our systems. But we aren't too serious about it.</p>
+							<h2>ELIZA <!-- is a AI Art Collective that --> meditates on and reifies the social impact of artificial intelligence through discursive and interactive projects. </h2>
+							<!-- <p>We are a team of artists, machine learning researchers and philosophers who believe AI needs to be better understood and conceptualized in order to be best used by society. <br> <br>Inspired by the <a href ="https://en.m.wikipedia.org/wiki/ELIZA_effect" style = "color:red">ELIZA effect</a>, we use various mediums and methods to interrogate the agency we endow to our systems. But we aren't too serious about it.</p> -->
 							
 						
 						</header>
 					</div>
 				</section>
+
+<section class="wrapper style1">
+					<div class="container">
+						<header class="major">
+						</header>
+					</div>
+				</section>
+
+				<section class="wrapper style3">
+					<div class="container">
+						<header class="major">
+								<h2 style = "color:black; font-weight: bold">Sign up for our newsletter</h2>
+								<form id = "signup">
+									<div class="row gtr-10">
+										<div class="col-6 col-12-mobilep">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="col-6 col-12-mobilep">
+											<input type="email" name="email" id="email" placeholder="Email" />
+										</div>
+										<!-- <div class="col-12">
+											<textarea name="message" id="message" placeholder="Message" rows="5"></textarea>
+										</div> -->
+										<div class="col-5 col-12-mobilep">
+										</div>
+										<div class="col-6">
+											<ul class="actions">
+												<li><input type="submit" class="button alt" value="Sign Up" /></li>
+											</ul>
+										</div>
+									</div>
+								</form>
+								</header>
+							</div>
+							</section>
+
+				
 
 			<!-- Posts -->
 			<!-- Gigantic Heading -->
@@ -85,10 +122,14 @@
 						</div>
 					</div>
 				</section>
+
+
+
 	
 			<!-- CTA -->
-					<div id="footer">
+				<div id="footer">
 					
+
 				
 
 					<!-- Copyright -->
@@ -103,6 +144,7 @@
 
 		</div>
 
+
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>
@@ -110,6 +152,25 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/jquery.serialize-object.min.js"></script>
+
+					<script>
+	var $form = $('form#signup'),
+    url = 'https://script.google.com/macros/s/AKfycbwnvHVwikUds90iTi7r-GP2NUkrXU0wmHPKyc9RQ8Ey-UHm3PY0/exec'
+
+			$('#signup').on('click', function(e) {
+			  e.preventDefault();
+			  var jqxhr = $.ajax({
+			    url: url,
+			    method: "GET",
+			    dataType: "json",
+			    data: $form.serializeObject(),
+			    success: function(){
+			    	console.log("made it")
+			    }
+			  });
+			})
+		</script>
 
 	</body>
 </html>
