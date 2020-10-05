@@ -1989,10 +1989,11 @@ input, select, textarea {
 
 		header.major p {
 			position: relative;
-			
+
 			font-size: 2em;
-			line-height: 1em;
-			/*letter-spacing: -0.025em;*/
+			line-height: 1.1em;
+			/*letter-spacing: 1em;*/
+			letter-spacing: -0.025em;
 		}
 
 	footer {
